@@ -3,7 +3,8 @@
 /////////////////////////////
 
 const express = require("express"),
-  bodyParser = require("body-parser");
+  bodyParser = require("body-parser"),
+  db = require("./models");
 
 // generate a new express app and call it 'app'
 const app = express();
@@ -25,6 +26,6 @@ app.get("/", function(req, res) {
 });
 
 //run server on port 3000
-app.listen(process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 3000, () => {
   console.log("personal api app listening at http://localhost:3000/");
 });
