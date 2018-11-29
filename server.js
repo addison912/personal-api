@@ -55,6 +55,31 @@ app.get("/api/places", (req, res) => {
   });
 });
 
+// get one place
+app.get("/api/placess/:id", function(req, res) {
+  // find one place by its id
+  db.Place.findOne({ _id: req.params.id }, (err, foundPlace) => {
+    if (err) {
+      return console.log(err);
+    }
+    res.json(foundPlace);
+  });
+});
+
+// create a new place
+app.post("/api/places", function(req, res) {
+  // create new place with form data (`req.body`)
+  console.log("create", req.body);
+  var newPlace = req.body;
+
+  db.Place.create(newPlace, (err, savedPlace) => {
+    if (err) {
+      return console.log(err);
+    }
+    res.json(savedPlace);
+  });
+});
+
 //run server on port 3000
 app.listen(process.env.PORT || 3000, () => {
   console.log("personal api app listening at http://localhost:3000/");
