@@ -4,4 +4,4 @@ mongoose.connect(
   { useNewUrlParser: true }
 );
 
-module.exports.Place = require("./Place");
+module.exports.Place = require("./places");

@@ -44,6 +44,17 @@ app.get("/api/profile", (req, res) => {
   res.json(profile);
 });
 
+app.get("/api/places", (req, res) => {
+  // send all places as JSON response
+  db.Place.find((err, places) => {
+    if (err) {
+      console.log("index error: " + err);
+      res.sendStatus(500);
+    }
+    res.json(places);
+  });
+});
+
 //run server on port 3000
 app.listen(process.env.PORT || 3000, () => {
   console.log("personal api app listening at http://localhost:3000/");
