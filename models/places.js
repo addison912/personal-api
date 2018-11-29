@@ -3,6 +3,7 @@ Schema = mongoose.Schema;
 
 const placeSchema = new Schema({
   city: String,
+  state: String,
   country: String,
   coordinates: {
     lat: Number,
@@ -15,6 +16,6 @@ const placeSchema = new Schema({
   livedThere: Boolean
 });
 
-const Place = mongoose.model("Place", PlaceSchema);
+const Place = mongoose.model("Place", placeSchema);
 
 module.exports = Place;
