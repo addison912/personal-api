@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: url("../images/ohThePlaces.jpg");
+}
+
+h1 {
+  font-family: "Kirang Haerang", sans-serif;
+  color: #51d1dc;
+  text-shadow: -1px -1px black, 1px 1px black, 1px -1px black, -1px 1px black;
+  font-size: 12vh;
+  margin-top: 1vh;
+}
+header {
+  display: flex;
+  justify-content: center;
+  height: 15vh;
+  margin-bottom: 2vh;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#map {
+  width: 44vw;
+  margin: 4vw;
+}
+
+#form {
+  width: 44vw;
+  margin: 4vw 4vw 4vw 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+}

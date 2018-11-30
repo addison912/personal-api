@@ -56,7 +56,7 @@ app.get("/api/places", (req, res) => {
 });
 
 // get one place
-app.get("/api/placess/:id", function(req, res) {
+app.get("/api/places/:id", function(req, res) {
   // find one place by its id
   db.Place.findOne({ _id: req.params.id }, (err, foundPlace) => {
     if (err) {
@@ -80,7 +80,46 @@ app.post("/api/places", function(req, res) {
   });
 });
 
+// delete a place
+app.delete("/api/places/:id", function(req, res) {
+  // get place id from url params (`req.params`)
+  console.log("places", req.params);
+  var placeId = req.params.id;
+  // find the index of the place we want to remove
+  db.Place.findByIdAndDelete(placeId, (err, deletedPlace) => {
+    if (err) {
+      return console.log(err);
+    }
+    res.json(deletedPlace);
+  });
+  console.log("deleting place with id", placeId);
+});
+
+// update place
+app.put("/api/places/:id", function(req, res) {
+  // get place id from url params (`req.params`)
+  var placeId = req.params.id;
+  // find the index of the place we want to update
+  db.Place.findByIdAndUpdate(
+    placeId,
+    req.body,
+    { new: true },
+    (err, updatedPlace) => {
+      if (err) {
+        return console.log(err);
+      }
+      res.json(updatedPlace);
+    }
+  );
+});
+
+<<<<<<< HEAD
+//run server on port 3001
+app.listen(process.env.PORT || 3001, () => {
+  console.log("personal api app listening at http://localhost:3001/");
+=======
 //run server on port 3000
 app.listen(process.env.PORT || 3000, () => {
   console.log("personal api app listening at http://localhost:3000/");
+>>>>>>> df25767e746d981d2a078cc4b4e2df43809452c6
 });

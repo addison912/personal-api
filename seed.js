@@ -45,6 +45,22 @@ var places_list = [
     highlights:
       "Pre-dawn walks through the city, dinner at Els Sortidors Del Parlament, riding the scooter around town, our apartment, Casa Batlo",
     livedThere: false
+  },
+  {
+    city: "Berkeley",
+    state: "CA",
+    country: "USA",
+    coordinates: {
+      lat: 37.8716,
+      lon: -122.2727
+    },
+    photo: "https://i.imgur.com/Zc0GPoY.jpg",
+    date: "",
+    description:
+      "The place where I was born and went to school until 8th grade",
+    highlights:
+      "Urban Ore, Brazil Cafe, Al Lasher's electronics, the Solano Stroll, Addison St.",
+    livedThere: true
   }
 ];
 
