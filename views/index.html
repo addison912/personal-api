@@ -12,36 +12,55 @@
     <title>Personal Api</title>
   </head>
   <body>
-    <header><h1>Oh the Places You've Been</h1></header>
     <main>
-      <div class="flex-row">
+      <div class="flex-column" id="main-container">
+        <div id="title-wrapper"><h1>Oh the Places You've Been</h1></div>
         <div id="map"></div>
-        <div id="form">
-          <form id="create-form">
-            <input type="text" placeholder="city" required />
-            <input type="text" placeholder="state" />
-            <input type="text" placeholder="country" />
-            <input type="text" placeholder="photo url" />
-            <input type="text" placeholder="date" />
-            <p>Lived here:</p>
-            <input type="checkbox" name="livedHere" id="livedHere" />
-            <textarea placeholder="description"></textarea>
-            <input type="text" placeholder="highlights" />
-            <p>Coordinates</p>
-            <input type="number" placeholder="latitude" /><input
-              type="number"
-              placeholder="longitude"
-            />
-            <input type="submit" value="Submit" />
+        <div id="place-list">
+          <form id="create-form" class="place-list-item">
+            <h3>ADD A PLACE</h3>
+            <div class="form-row">
+              <input type="text" placeholder="city" id="city" required />
+              <input type="text" placeholder="state" id="state" />
+              <input type="text" placeholder="country" id="country" />
+            </div>
+            <div class="form-row">
+              <input type="text" placeholder="photo url" id="photo" />
+              <input type="text" placeholder="date" id="date" />
+              <p>Lived here:</p>
+              <input type="checkbox" name="livedThere" id="livedThere" />
+            </div>
+            <div class="form-row">
+              <textarea placeholder="description" id="description"></textarea>
+            </div>
+            <div class="form-row">
+              <input type="text" placeholder="highlights" id="highlights" />
+            </div>
+            <div class="form-row">
+              <input
+                type="number"
+                placeholder="latitude"
+                id="lat"
+                step="any"
+              /><input
+                type="number"
+                placeholder="longitude"
+                id="lon"
+                step="any"
+              />
+              <input class="create" type="submit" value="Submit" />
+            </div>
           </form>
+          <div id="places"></div>
         </div>
       </div>
     </main>
-    <script src="scripts/app.js" type="text/javascript"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg&callback=initMap"
-      async
-      defer
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
     ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg&callback=initMap"></script>
+    <script src="scripts/app.js" type="text/javascript"></script>
   </body>
 </html>

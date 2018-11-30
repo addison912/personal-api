@@ -76,6 +76,7 @@ app.post("/api/places", function(req, res) {
     if (err) {
       return console.log(err);
     }
+    console.log(savedPlace);
     res.json(savedPlace);
   });
 });

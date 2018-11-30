@@ -4,6 +4,10 @@
 body {
   margin: 0;
   background: url("../images/ohThePlaces.jpg");
+  background-position: top center;
+  height: 1vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1 {
@@ -13,31 +17,143 @@ h1 {
   font-size: 12vh;
   margin-top: 1vh;
 }
-header {
+#title-wrapper {
   display: flex;
   justify-content: center;
   height: 15vh;
   margin-bottom: 2vh;
 }
 
+#main-container {
+  padding: 0 8vw;
+  // overflow: scroll;
+}
 .flex-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #map {
-  width: 44vw;
+  width: 94vw;
+  height: 69vh;
   margin: 4vw;
+  border-radius: 5px;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.4);
 }
 
-#form {
-  width: 44vw;
-  margin: 4vw 4vw 4vw 0;
-  display: flex;
-  flex-direction: column;
+/////////// form ///////////
+#create-form {
+  width: 100%;
 }
-
 .form-row {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+form {
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    height: 25px;
+  }
+  input[type="submit"],
+  button[type="submit"] {
+    border-style: groove;
+  }
+
+  .create {
+    width: 50%;
+    background: rgb(142, 199, 142);
+    background-image: linear-gradient(
+      rgba(89, 126, 89, 0.1),
+      rgb(142, 199, 142),
+      rgba(89, 126, 89, 0.4)
+    );
+  }
+  textarea {
+    width: 100%;
+    height: 45px;
+  }
+  input,
+  textarea,
+  button {
+    margin: 3px 4px 3px 0;
+    border-style: none;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  input::placeholder,
+  textarea::placeholder,
+  input[type="submit"],
+  button {
+    text-transform: uppercase;
+  }
+  textarea:last-child,
+  input:last-child {
+    margin: 3px 0 3px 0;
+  }
+  h3 {
+    margin: 4px;
+    font-family: sans-serif;
+  }
+  p {
+    width: 33.33%;
+    margin: 0 10px;
+    font-size: 1em;
+  }
+}
+
+////////// place list //////////
+#place-list {
+  width: 94vw;
+  height: 69vh;
+  margin: 0 3vw 4vw 3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.place-list-item {
+  margin: 0 0 14px 0;
+  padding: 8px;
+  background: #ddd;
+  border-radius: 5px;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.place {
+  width: 44vw;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+}
+
+#places {
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.edit {
+  background-image: linear-gradient(
+    rgba(100, 100, 100, 0.5),
+    rgb(150, 150, 150),
+    rgba(80, 80, 80, 0.8)
+  );
+  color: white;
+}
+
+.delete {
+  background-image: linear-gradient(
+    rgba(99, 2, 2, 0.5),
+    rgb(170, 0, 0),
+    rgba(99, 2, 2, 0.8)
+  );
+  color: white;
 }
