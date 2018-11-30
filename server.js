@@ -113,13 +113,7 @@ app.put("/api/places/:id", function(req, res) {
   );
 });
 
-<<<<<<< HEAD
 //run server on port 3001
 app.listen(process.env.PORT || 3001, () => {
   console.log("personal api app listening at http://localhost:3001/");
-=======
-//run server on port 3000
-app.listen(process.env.PORT || 3000, () => {
-  console.log("personal api app listening at http://localhost:3000/");
->>>>>>> df25767e746d981d2a078cc4b4e2df43809452c6
 });
